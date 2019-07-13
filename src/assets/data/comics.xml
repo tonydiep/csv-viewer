@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<comics>
+   <publication>
+      <id>1</id>
+      <title>Valiant</title>
+      <publisher>Fleetway</publisher>
+      <genre>Action/Adventure</genre>
+   </publication>
+   <publication>
+      <id>2</id>
+      <title>Victor</title>
+      <publisher>IPC Magazines</publisher>
+      <genre>Action/Adventure/War</genre>
+   </publication>
+   <publication>
+      <id>3</id>
+      <title>Lion</title>
+      <publisher>IPC Magazines</publisher>
+      <genre>Action/Adventure/War/Science Fiction/Information</genre>
+   </publication>
+   <publication>
+      <id>4</id>
+      <title>Battle</title>
+      <publisher>IPC Magazines</publisher>
+      <genre>Action/Adventure/War</genre>
+   </publication>
+   <publication>
+      <id>5</id>
+      <title>2000AD</title>
+      <publisher>IPC Magazines</publisher>
+      <genre>Thriller/Science Fiction/Myth/History</genre>
+   </publication>
+   <publication>
+      <id>6</id>
+      <title>Warlord</title>
+      <publisher>IPC Magazines</publisher>
+      <genre>War</genre>
+   </publication>
+   <publication>
+      <id>7</id>
+      <title>Eagle</title>
+      <publisher>IPC Magazines</publisher>
+      <genre>Science Fiction/Thriller/Adventure</genre>
+   </publication>
+   <publication>
+      <id>8</id>
+      <title>Transformers UK</title>
+      <publisher>Marvel</publisher>
+      <genre>Science Fiction/Action</genre>
+   </publication>
+</comics>
+
