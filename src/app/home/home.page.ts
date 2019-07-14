@@ -15,16 +15,22 @@ export class HomePage {
 
 
   xmlItems: any;
+  csvItems: any;
+  tsvItems: any;
 
   ionViewWillEnter() {
-    this.loadXML();
-
-    this.loadCSV();
+    this.load();
   }
 
-  public csvItems: any;
+  load(){
+    this.loadXML();
+    this.loadCSV();
+    this.loadTSV();
+  }
+
 
   loadCSV() {
+    console.log('loading CSV');
     this.http.get('/assets/data/comics.csv', {responseType: 'text'})
       .subscribe((data) => {
         let csv = this.parseCSVFile(data);
@@ -124,6 +130,7 @@ export class HomePage {
 
 
   loadXML() {
+    console.log('loading XML');
     this.http.get(
       '/assets/data/comics.xml',
       {
@@ -166,4 +173,58 @@ export class HomePage {
       })
     })
   }
+
+  loadTSV()
+  {
+    console.log('loading TSV');
+     this.http.get('/assets/data/comics.tsv', {responseType: 'text'})
+     .subscribe((data)=>
+     {
+        var tsv         = this.parseTSVFile(data);
+        this.tsvItems  = tsv;
+     });
+  }
+
+  
+  parseTSVFile(str)
+  {
+     var arr  = [],
+         obj  = [],
+         row,
+         col,
+         c;
+  
+  
+     // iterate over each character, keep track of current row and column (of the returned array)
+     for (row = col = c = 0; c < str.length; c++)
+     {
+        var cc            = str[c];
+  
+        arr[row]           = arr[row] || [];
+        arr[row][col]  = arr[row][col] || '';
+  
+        // If it's a tab move on to the next column
+        if (cc == '\t')
+        {
+           ++col;
+           continue;
+        }
+  
+  
+        /* If it's a newline move on to the next
+           row and move to column 0 of that new row */
+        if (cc == '\n')
+        {
+           ++row;
+           col = 0;
+           continue;
+        }
+  
+  
+        // Otherwise, append the current character to the current column
+        arr[row][col] += cc;
+     }
+  
+     return this.formatParsedObject(arr, false);
+  }  
 }

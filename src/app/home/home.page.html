@@ -6,6 +6,7 @@
     <ion-title>
       Home
     </ion-title>
+    <ion-button (click)="load()" >Reload</ion-button>
   </ion-toolbar>
 </ion-header>
 
@@ -22,6 +23,13 @@
   <ion-item-group>
     <ion-item-divider color="light">CSV</ion-item-divider>
     <ion-item *ngFor="let item of csvItems">
+      {{ item.title }}
+    </ion-item>
+  </ion-item-group>
+
+  <ion-item-group>
+    <ion-item-divider color="light">TSV</ion-item-divider>
+    <ion-item *ngFor="let item of tsvItems">
       {{ item.title }}
     </ion-item>
   </ion-item-group>
